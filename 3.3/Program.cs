@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _3._3
 {
@@ -12,7 +13,8 @@ namespace _3._3
             Console.Write("Podaj wage w kg: ");
             string text = Console.ReadLine();
             double.TryParse(text, out waga);
-            if (waga <= 0)
+
+            while (waga <= 0) // for ( ;waga <= 0; )
             {
                 Console.Write("Podaj wage w kg: ");
                 text = Console.ReadLine();
@@ -27,7 +29,8 @@ namespace _3._3
             czyWagaNorma = wskaznikBMI >= 18.5 && wskaznikBMI < 25;
             Console.WriteLine("BMI = {0,6:F2}", wskaznikBMI);
             Console.WriteLine("Czy jestes gruba swinia?");
-            if (czyWagaNorma == false)
+
+            if (czyWagaNorma == false) // (!czyWagaNorma)
             {
                 Console.Write("Tak, prosiaku!");
             }
@@ -35,6 +38,24 @@ namespace _3._3
             {
                 Console.Write("Nie, chudzielcu!");
             }
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            /*
+            for (int i = 0; i < 100; i++)
+            {
+
+            }
+
+            List<int> list = new List<int> { 1, 2, 3, 56, 7, 4, 2, 45, 23 };
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine($"i: {i} listCount: {list.Count} listElement: {list[i]}");
+            }
+            */
+
             Console.ReadKey();
         }
     }
